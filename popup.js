@@ -68,8 +68,8 @@ function loadStudents() {
             }
 
             // Alert the user of the chosen student
-            var code = "swal({title:'" + selectedStudent[0] + "',html: '" + image + "',timer:4000,animation: false,customClass: 'animated bounceInLeft',onOpen:()=>{swal.showLoading()}}).then((result)=>{if(result.dismiss==='timer'){}})";
-            chrome.tabs.executeScript({ code: code }, function (result) {});
+            var randomStudentAlert = "swal({title:'" + selectedStudent[0] + "',html: '" + image + "',timer:4000,animation: false,customClass: 'animated bounceInLeft',onOpen:()=>{swal.showLoading()}}).then((result)=>{if(result.dismiss==='timer'){}})";
+            chrome.tabs.executeScript({ code: randomStudentAlert }, function (result) {});
 
 
 
