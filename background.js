@@ -1,4 +1,8 @@
 // Set default cookies
+
+Cookies.set('imagesShouldLoad', true);
+Cookies.set('timeDisplayed', 4);
+
 auth();
 
 function auth(){

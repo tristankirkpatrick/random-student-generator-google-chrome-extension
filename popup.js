@@ -35,7 +35,7 @@ function loadStudents() {
 
           chrome.tabs.executeScript({ file: "js/sweetalert2.js" }, function (result) {});
           chrome.tabs.executeScript({ file: "js/jquery-3.2.1.min.js" }, function (result) {});
-
+          window.close();
             var $input = $(this);
             var courseid = $input.attr("data");
             var students;
@@ -62,10 +62,10 @@ function loadStudents() {
 
             // If no image exists, assign a user profile generic image
             if (selectedStudent[1].substring(0, 5) == "https") {
-                image = `</br><img style="height:210px;border-radius: 50%;" src="https://robohash.org/` + selectedStudent[0] + `.png?bgset=bg1?size=210x210">`;
+                image = `</br><img style="height:210px;border-radius: 50%;" src="https://robohash.org/` + selectedStudent[0] + `.png?bgset=bg1&size=210x210">`;
             } else {
                 if (imageSetting == "false") {
-                    image = `</br><img style="height:210px;border-radius: 50%;" src="https://robohash.org/` + selectedStudent[0] + `.png?bgset=bg1?size=210x210">`;
+                    image = `</br><img style="height:210px;border-radius: 50%;" src="https://robohash.org/` + selectedStudent[0] + `.png?bgset=bg1&size=210x210">`;
                 } else {
                     image = `</br><img style="height:210px;border-radius: 50%;" src="https:` + selectedStudent[1] + `">`;
                 }
@@ -77,7 +77,7 @@ function loadStudents() {
             // Alert the user of the chosen student
             var randomStudentAlert = "swal({title:'" + selectedStudent[0] + "',html: '" + image + "',timer: " + timerDuration + ",animation: true,showCloseButton: true,onOpen:()=>{swal.showLoading()}}).then((result)=>{if(result.dismiss==='timer'){}})";
             chrome.tabs.executeScript({ code: randomStudentAlert }, function (result) {});
-            window.close();
+
         })
     })
 }
