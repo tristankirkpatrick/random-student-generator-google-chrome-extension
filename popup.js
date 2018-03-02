@@ -48,6 +48,7 @@ function loadStudents() {
                       if (students == null){
                         chrome.tabs.executeScript({ code: 'swal({type:"error",title:"Oops...",text:"No students were found in this Google Classroom. You can add them via class code or adding each student manually on the Students tab!"});' }, function (result) {
                         });
+                        window.close();
                       }
                   }
               }
