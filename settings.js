@@ -1,6 +1,6 @@
 var timecookie = Cookies.get('timeDisplayed');
 
-if (timecookie == 4){
+if (timecookie == 4 || timecookie == null || timecookie == 0){
   Cookies.set('timeDisplayed', 4);
 }
 
