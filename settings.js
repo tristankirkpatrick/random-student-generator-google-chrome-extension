@@ -1,7 +1,8 @@
 window.onload = function controller() {
 
+  $('#timeDisplayed').prop('value', Cookies.get('timeDisplayed'));
+
   var imageSetting = Cookies.get('imagesShouldLoad');
-  console.log(imageSetting);
 
   if (imageSetting == "true"){
     $('#imageSetting').prop('checked', true)
@@ -25,6 +26,19 @@ window.onload = function controller() {
             Cookies.set('imagesShouldLoad', false);
           }
       });
+
+      $('#timeDisplayed').change(
+          function(){
+            Cookies.remove('timeDisplayed');
+            Cookies.set('timeDisplayed', this.value);
+            console.log(this.value);
+            console.log(Cookies.get('timeDisplayed'));
+          });
+
+
+
+
+
 
 
 }
