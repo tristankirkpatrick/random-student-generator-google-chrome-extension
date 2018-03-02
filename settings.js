@@ -1,6 +1,12 @@
+var timecookie = Cookies.get('timeDisplayed');
+
+if (timecookie == 4){
+  Cookies.set('timeDisplayed', 4);
+}
+
 window.onload = function controller() {
 
-  $('#timeDisplayed').prop('value', Cookies.get('timeDisplayed'));
+  $('#timeDisplayed').prop('value', parseInt(Cookies.get('timeDisplayed')));
 
   var imageSetting = Cookies.get('imagesShouldLoad');
 
