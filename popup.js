@@ -20,6 +20,7 @@ window.onload = function controller() {
 function loadStudents() {
     chrome.storage.local.get(['storedClassrooms'], function (courses) {
         $('.classroomid').click(function () {
+          window.close();
             var $input = $(this);
             var courseid = $input.attr("data");
             var students;
