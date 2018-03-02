@@ -18,7 +18,7 @@ window.onload = function controller() {
             $("#preloader").hide();
             for (i = 0; i < courses.storedClassrooms.length; i++) {
                 var course = courses.storedClassrooms[i];
-                $("#courseList").append("<a class='waves-effect waves-light btn fullwidth blue classroomid' data='" + course.id + "'><i class='material-icons right'>group</i> "+ course.name +"</a>");
+                $("#courseList").append("<a class='waves-effect waves-light btn fullwidth blue classroomid' data='" + course.id + "'> "+ course.name +"</a>");
             }
         } else {
             $("#courseList").append("<h5><span class=grey-text text-darken-2>Select a Classroom</span></h5>");
