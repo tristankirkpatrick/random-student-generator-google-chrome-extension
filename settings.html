@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <div class="container grey lighten-4">
+    <h5 style="margin-bottom: 20px;">
+      <span class="grey-text text-darken-2">Settings</span>
+    </h5>
+
+    <div class="row">
+        <div class="col s6">
+                <h6>Student Images:</h6>
+        </div>
+         <div class="col s6 right" style="margin-top:7px;">
+            <div class="switch">
+                <label>
+                  Off
+                  <input id="imageSetting" type="checkbox" checked>
+                  <span class="lever"></span>
+                  On
+                </label>
+              </div>
+        </div>
+
+      </div>
+
+  </div>
+  <footer class="page-footer grey lighten-4 footerstick">
+    <div class="container grey-text text-darken-2">
+      <div class="row">
+        <div class="col s2 left">
+          <a href="popup.html">
+            <div>
+              <h6>Back</h6>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/sweetalert2.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="js/js.cookie.js"></script>
+  <script src="settings.js"></script>
+
+</body>
+
+</html>

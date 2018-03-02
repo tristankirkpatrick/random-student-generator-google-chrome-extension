@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+  <link type="text/css" rel="stylesheet" href="css/animate.css" />
+
+  <script src="background.js"></script>
+</head>
+
+<body>
+  <div class="container grey lighten-4">
+    <h5 style="margin-bottom: 10px;">
+      <span class="grey-text text-darken-2">Select a Classroom:</span>
+    </h5>
+    <div id="preloader" class="progress blue">
+      <div class="indeterminate"></div>
+    </div>
+    <div id="nostudents">
+      <h5>Your classrooms have no students. Please make sure they have joined your class.</h5>
+    </div>
+    <div id="content" class="scrollable"></div>
+  </div>
+  <footer class="page-footer grey lighten-4 footerstick">
+    <div class="container grey-text text-darken-2">
+      <div class="row">
+        <div class="col s2 right">
+          <a href="settings.html">
+            <div>
+              <i class="material-icons" style="font-size:24px;">settings</i>
+            </div>
+          </a>
+        </div>
+        <div class="col s2 right">
+          <a href="info.html">
+            <div>
+              <i class="material-icons" style="font-size:24px;">info</i>
+            </div>
+          </a>
+        </div>
+  </footer>
+
+  <script src="popup.js"></script>
+  <script src="js/sweetalert2.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="js/js.cookie.js"></script>
+
+</body>
+</html>
