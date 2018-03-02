@@ -18,7 +18,6 @@ window.onload = function controller() {
             $("#preloader").hide();
             for (i = 0; i < courses.storedClassrooms.length; i++) {
                 var course = courses.storedClassrooms[i];
-                console.log(courses.storedClassrooms[i]);
                 $("#courseList").append("<a class='waves-effect waves-light btn fullwidth blue classroomid' data='" + course.id + "'> "+ course.name +"</a>");
             }
         } else {
