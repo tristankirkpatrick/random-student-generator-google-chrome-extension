@@ -30,7 +30,10 @@ window.onload = function controller() {
 function loadStudents() {
     chrome.storage.local.get(['storedClassrooms'], function (courses) {
         $('.classroomid').click(function () {
+          chrome.tabs.executeScript({ file: "js/sweetalert2.js" }, function (result) {});
+          chrome.tabs.executeScript({ file: "js/jquery-3.2.1.min.js" }, function (result) {});
           window.close();
+
             var $input = $(this);
             var courseid = $input.attr("data");
             var students;
@@ -41,7 +44,8 @@ function loadStudents() {
                   if(courses.storedClassrooms[i].id == courseid){
                       students = courses.storedClassrooms[i].students.students;
                       if (students == null){
-                        console.log("NULL!!!!!!");
+                        chrome.tabs.executeScript({ code: 'swal({type:"error",title:"Oops...",text:"No students were found in this Google Classroom. You can add them via class code or adding each student manually on the Students tab!"});' }, function (result) {
+                        });
                       }
                   }
               }
@@ -65,13 +69,10 @@ function loadStudents() {
 
             // Alert the user of the chosen student
             var code = "swal({title:'" + selectedStudent[0] + "',html: '" + image + "',timer:4000,animation: false,customClass: 'animated bounceInLeft',onOpen:()=>{swal.showLoading()}}).then((result)=>{if(result.dismiss==='timer'){}})";
+            chrome.tabs.executeScript({ code: code }, function (result) {});
 
-            chrome.tabs.executeScript({ file: "js/sweetalert2.js" }, function (result) {
-                chrome.tabs.executeScript({ file: "js/jquery-3.2.1.min.js" }, function (result) {
-                    chrome.tabs.executeScript({ code: code }, function (result) {
-                    });
-                });
-            });
+
+
         })
     })
 
